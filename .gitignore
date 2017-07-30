@@ -1,6 +1,9 @@
 .credentials/
 node_modules/
 
+client_secret.json
+resources/list.csv
+resources/raw-email.txt
+
 *.secret
 *.xlsx
-client_secret.json
