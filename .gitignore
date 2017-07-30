@@ -1,0 +1,6 @@
+.credentials/
+node_modules/
+
+*.secret
+*.xlsx
+client_secret.json

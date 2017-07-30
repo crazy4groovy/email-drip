@@ -1,0 +1,5 @@
+From: John Doe <sender-account@gmail.com>
+To: %name% <%email%>
+Subject: Saying Hello
+
+This is a message just to say hello. So, "Hello".
