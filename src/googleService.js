@@ -37,12 +37,12 @@ function send (emailTemplate, userId, auth, idx = 0) {
         return
       }
 
-      // send next email in 1-4 minutes
-      console.log(now(), 'TIME DELAY in minutes: ', timeDelay / 1000 / 60)
+      var delay = timeDelay()
+      console.log(now(), 'TIME DELAY in minutes: ', delay / 1000 / 60)
 
       setTimeout(
         () => send(emailTemplate, userId, auth, idx + 1),
-        timeDelay()
+        delay
       )
     })
 
