@@ -1,0 +1,9 @@
+<body>
+
+<h1>TEST EMAIL</h1>
+
+<p>Ya, very lame I know</p>
+
+<p>%email%</p>
+
+</body>
