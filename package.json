@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "mailjet": "node src/mailjet",
+    "gmail": "node src/gmail",
     "test": "test"
   },
   "author": "solsen@ae911truth.org",
