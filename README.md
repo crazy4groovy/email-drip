@@ -2,6 +2,11 @@
 
 Send an email to a newsletter list via Gmail, at the rate of a **slow drip**. (3-6 minutes per each email sent)
 
+## run
+
+- npm run mailjet
+- npm run gmail
+
 ## inputs
 
 - /resources/list.csv

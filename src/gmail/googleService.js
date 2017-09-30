@@ -4,8 +4,8 @@ var gmail = google.gmail('v1')
 var { btoa: encode64 } = require('Base64')
 var csv = require('csv-string')
 
-var defaultEmailTemplate = fs.readFileSync('./resources/raw-email.txt').toString()
-var emailRecipientList = csv.parse(fs.readFileSync('./resources/list.csv').toString())
+var defaultEmailTemplate = fs.readFileSync('../../resources/raw-email.txt').toString()
+var emailRecipientList = csv.parse(fs.readFileSync('../../resources/list.csv').toString())
 var oneMinute = 60 * 1000
 
 var timeDelay = () => (3 * oneMinute) + (3 * oneMinute * Math.random())

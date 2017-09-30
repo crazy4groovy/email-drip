@@ -1,10 +1,10 @@
 // no requires!
 
 var oneMinute = 60 * 1000
-var timeDelay = () => (0.5 * oneMinute) + (0.5 * oneMinute * Math.random())
+var timeDelay = () => (2 * oneMinute) + (2 * oneMinute * Math.random())
 var now = () => new Date().toLocaleString()
 
-var senderCb = (sendMail, opts, idx) => {
+var scheduleSendMail = (sendMail, opts, idx) => {
   console.log(now(), '#', idx, ' SENT to: >>>', opts.email, '<<< ', new Date().toLocaleString())
 
   idx += 1
@@ -20,20 +20,23 @@ var senderCb = (sendMail, opts, idx) => {
   setTimeout(
       () => (
           sendMail(opts, idx)
-          .then(() => senderCb(sendMail, opts, idx))
+          .then(() => scheduleSendMail(sendMail, opts, idx))
       ),
       delay
   )
 
-  return senderCb // ref to self
+  return scheduleSendMail // ref to self
 }
 
 var listSize = 1 // only temp val, should be replaced by sendSched
+
 module.exports = {
   sendSched: function sendSched (sendMail, opts, _listSize) {
     listSize = _listSize
 
     return sendMail(opts, 0)
-        .then(idx => senderCb(sendMail, opts, idx))
+        .then(idx =>
+          scheduleSendMail(sendMail, opts, idx)
+        )
   }
 }
